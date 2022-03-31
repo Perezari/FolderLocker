@@ -47,13 +47,13 @@ namespace folderLocker
                 SQLiteParameter p2 = new SQLiteParameter("@folderpwd", md5Pwd);
                 DbHelperSQLite.ExecuteSql(SQLinsert, p1, p2);
                 //
-                MessageBox.Show("The folder is locked.");
+                XtraMessageBox.Show(".התיקייה נעולה", "הגדרת סיסמה לתיקייה", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SendKeys.SendWait("{f5}");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Passwords don't match or blank password,please retype password");
+                XtraMessageBox.Show("Passwords don't match or blank password,please retype password");
                 //textBox1.Clear();
                 confirmpwd.Clear();
                 inputpwd.Focus();
